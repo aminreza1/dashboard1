@@ -1,0 +1,44 @@
+
+
+
+
+  <mat-drawer-container dir="rtl" autosize>
+    <mat-drawer
+      [mode]="sidebarMode"
+      [opened]="sidebarOpened"
+      *ngIf="isAuth"
+      (closed)="onSideNavClose()"
+      class="bg-primary"
+    >
+      <mat-nav-list>
+        <mat-list-item routerLink="/">
+          <mat-icon mat-list-icon color="primary">home</mat-icon>
+          <h4 mat-line>صفحه اصلی</h4>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/profile">
+          <mat-icon mat-list-icon color="primary">account_circle</mat-icon>
+          <h4 mat-line>ویرایش پروفایل</h4>
+        </mat-list-item>
+
+        <mat-list-item (click)="onLogout()">
+            <mat-icon mat-list-icon color="primary">logout</mat-icon>
+            <h4 mat-line>خروج</h4>
+          </mat-list-item>
+
+      </mat-nav-list>
+      <!-- <button
+        fxHide.gt-xs
+        mat-stroked-button
+        class="user-icon-sidebar"
+      >
+        <mat-icon>account_circle</mat-icon>
+        <span class="ms-1">{{ username }}</span>
+      </button> -->
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+

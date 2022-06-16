@@ -1,0 +1,16 @@
+.profile-info-card{
+    padding: 15px;
+    margin: 10px;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+table{
+    margin-bottom: 20px;
+}
+table td,table th {
+    border-right: 1px solid gainsboro;
+}
+table td:first-child,
+table th:first-child {
+    border-right: 0px;
+}

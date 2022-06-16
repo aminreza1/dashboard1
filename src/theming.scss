@@ -1,0 +1,91 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$md-figma-pallete:  (
+    50 : #e6e6ea,
+    100 : #c0c1c9,
+    200 : #9697a6,
+    300 : #6b6d82,
+    400 : #4c4e67,
+    500 : #2c2f4c,
+    600 : #272a45,
+    700 : #21233c,
+    800 : #1b1d33,
+    900 : #101224,
+    A100 : #656fff,
+    A200 : #3240ff,
+    A400 : #0011fe,
+    A700 : #000fe5,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-indianred: (
+    50 : #f9ebeb,
+    100 : #f0cece,
+    200 : #e6aeae,
+    300 : #dc8d8d,
+    400 : #d57474,
+    500 : #cd5c5c,
+    600 : #c85454,
+    700 : #c14a4a,
+    800 : #ba4141,
+    900 : #ae3030,
+    A100 : #fff4f4,
+    A200 : #ffc1c1,
+    A400 : #ff8e8e,
+    A700 : #ff7474,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-custom-primary: mat-palette($md-figma-pallete, 800);
+$my-custom-accent: mat-palette($mat-blue-gray, 700);
+$my-custom-warn: mat-palette($md-indianred, 600);
+
+$my-custom-theme: mat-light-theme(
+  $my-custom-primary,
+  $my-custom-accent,
+  $my-custom-warn
+);
+
+@include angular-material-theme($my-custom-theme);
+
+.bg-primary{
+    background-color: mat-color($my-custom-primary, 500) !important;
+}
+.color-warn{
+    color: mat-color($my-custom-warn, 600) !important;
+}
+
+.mat-card {
+    padding: 20px !important;
+}

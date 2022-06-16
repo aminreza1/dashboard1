@@ -1,0 +1,61 @@
+<div class="p-20">
+    <h2>ویرایش پروفایل</h2>
+    <p>صفحه اصلی > پروفایل کاربر > ویرایش پروفایل</p>
+
+    <div class="profile-info-card">
+        <form>
+        <h4>تصویر پروفایل</h4>
+        <img class="mb-4" [src]="baseUrl + user.avatar" alt="" width="50" height="50">
+        <div fxLayout="row">
+            
+            
+                <mat-form-field appearance="outline" class="w-100 p-10">
+                    <mat-label>نام</mat-label>
+                    <input matInput placeholder="Placeholder">
+                  </mat-form-field>
+           
+           
+                <mat-form-field appearance="outline" class="w-100 p-10">
+                    <mat-label>نام خانوادگی</mat-label>
+                    <input matInput placeholder="Placeholder">
+                  </mat-form-field>
+          
+           
+                <mat-form-field appearance="outline" class="w-100 p-10">
+                    <mat-label>کد ملی</mat-label>
+                    <input matInput placeholder="Placeholder">
+                  </mat-form-field>
+
+        </div>
+        <div fxLayout="row" style="border-bottom: 1px solid gainsboro;">
+            
+            <mat-form-field appearance="outline" class="w-100 p-10">
+                <mat-label>تاریخ تولد</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>روز/ماه/سال</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="w-100 p-10">
+                <mat-label>جنسیت</mat-label>
+                <mat-select>
+                  <mat-option value="unknown" selected>نامشخص</mat-option>
+                  <mat-option value="male">مرد</mat-option>
+                  <mat-option value="female">زن</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            
+          
+
+       
+      
+    </div>
+        <div style="margin-top: 10px;"> 
+            <button mat-raised-button color="accent" type="submit">ذخیره</button>
+            <button mat-button routerLink="/profile" >انصراف</button>
+        </div>
+    </form>
+    </div>
+</div>

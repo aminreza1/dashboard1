@@ -1,0 +1,33 @@
+<div class="p-20">
+    <h2>پروفایل کاربر</h2>
+    <p>صفحه اصلی  > پروفایل کاربر</p>
+
+    <div class="profile-info-card">
+        <h3>اطلاعات پروفایل</h3>
+        <div fxLayout="row" style="border-bottom: 1px solid gainsboro;">
+            <div>
+                <img class="mb-4" [src]="baseUrl + user.avatar" alt="" width="50" height="50">
+            </div>
+            <div fxFlex>
+                <table>
+                    <tr>
+                        <th>نام کاربری</th>
+                        <th>نام</th>
+                        <th>نام خانوادگی</th>
+                        <th>شماره تماس</th>
+                    </tr>
+                    <tr>
+                        <td>{{user.username}}</td>
+                        <td>{{user.first_name}}</td>
+                        <td>{{user.last_name}}</td>
+                        <td>{{user.mobile}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="margin-top: 10px;"> 
+            <button mat-raised-button color="accent" routerLink="/profile/update">ویرایش اطلاعات</button>
+        </div>
+       
+    </div>
+</div>
