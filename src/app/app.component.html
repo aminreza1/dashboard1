@@ -10,6 +10,16 @@
       (closed)="onSideNavClose()"
       class="bg-primary"
     >
+    <div fxLayout="row">
+      <div class="nav-top-icon-btn">
+        <button mat-fab class="mat-light-btn">
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-fab class="mat-light-btn">
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
+    </div>
       <mat-nav-list>
         <mat-list-item routerLink="/">
           <mat-icon mat-list-icon color="primary">home</mat-icon>
@@ -25,7 +35,6 @@
             <mat-icon mat-list-icon color="primary">logout</mat-icon>
             <h4 mat-line>خروج</h4>
           </mat-list-item>
-
       </mat-nav-list>
       <!-- <button
         fxHide.gt-xs
@@ -37,6 +46,7 @@
       </button> -->
     </mat-drawer>
     <mat-drawer-content>
+      <div *ngIf="isAuth" class="layout-bg"></div>
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>

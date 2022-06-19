@@ -4,8 +4,15 @@ mat-drawer-container{
   
   mat-drawer-content{
     height: calc(100vh) !important;
+    background-color: #f5f7fa;
   } 
-
+  mat-drawer-content div.layout-bg{
+    background-color: #3C416A; 
+    width:calc(100% - 200px);
+    height: 200px;
+    position: fixed;
+    z-index: -1;
+  } 
   mat-drawer{
     min-width: 200px;
     
@@ -13,4 +20,11 @@ mat-drawer-container{
 
   mat-list-item h4,mat-list-item mat-icon{
     color: whitesmoke;
+  }
+
+  .nav-top-icon-btn{
+    margin: 20px auto 30px;
+  }
+  .nav-top-icon-btn button{
+    margin: 0 5px;
   }

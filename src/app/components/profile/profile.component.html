@@ -1,12 +1,12 @@
 <div class="p-20">
-    <h2>پروفایل کاربر</h2>
-    <p>صفحه اصلی  > پروفایل کاربر</p>
+    <h2 class="color-white">پروفایل کاربر</h2>
+    <p class="color-white">صفحه اصلی  > پروفایل کاربر</p>
 
-    <div class="profile-info-card">
-        <h3>اطلاعات پروفایل</h3>
-        <div fxLayout="row" style="border-bottom: 1px solid gainsboro;">
+    <div class="page-content-card mat-elevation-z5">
+        <h3 class="color-p400">اطلاعات پروفایل</h3>
+        <div fxLayout="row">
             <div>
-                <img class="mb-4" [src]="baseUrl + user.avatar" alt="" width="50" height="50">
+                <img class="avatar mb-4" [src]="baseUrl + user.avatar">
             </div>
             <div fxFlex>
                 <table>
@@ -17,16 +17,20 @@
                         <th>شماره تماس</th>
                     </tr>
                     <tr>
-                        <td>{{user.username}}</td>
-                        <td>{{user.first_name}}</td>
-                        <td>{{user.last_name}}</td>
-                        <td>{{user.mobile}}</td>
+                        <td class="color-p600">{{user.username}}</td>
+                        <td class="color-p600">{{user.first_name}}</td>
+                        <td class="color-p600">{{user.last_name}}</td>
+                        <td class="color-p600">{{user.mobile}}</td>
                     </tr>
                 </table>
             </div>
         </div>
+        <hr />
         <div style="margin-top: 10px;"> 
-            <button mat-raised-button color="accent" routerLink="/profile/update">ویرایش اطلاعات</button>
+            <button mat-raised-button class="custom-btn-01" routerLink="/profile/update">
+                <mat-icon>border_color</mat-icon>
+                ویرایش اطلاعات
+            </button>
         </div>
        
     </div>

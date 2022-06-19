@@ -2,7 +2,9 @@ export interface LoginDto {
     username: string;
     password: string;
   }
-  
+  export interface VerifyDto {
+    token: string;
+  }
   export interface TokenDto {
     token: string;
     user:UserDto;
@@ -18,5 +20,10 @@ export interface LoginDto {
     avatar:string;
   }
 
+  export interface UserUpdateDto {
+    last_name:string;
+    first_name:string;
+    avatar:File | null;
+  }
 
   

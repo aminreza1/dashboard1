@@ -1,15 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Samim;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/font/fa/samim/Samim-FD.eot");
+  src: url("/assets/font/fa/samim/Samim-FD.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("/assets/font/fa/samim/Samim-FD.woff2")
+      format("woff2"),
+      url("/assets/font/fa/samim/Samim-FD.woff")
+      format("woff"),
+      url("/assets/font/fa/samim/Samim-FD.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Samim;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/fa/samim/Samim-Bold-FD.eot");
+  src: url("/assets/font/fa/samim/Samim-Bold-FD.eot?#iefix")
+      format("embedded-opentype"),url("/assets/font/fa/samim/Samim-Bold-FD.woff2")
+      format("woff2"),
+      url("/assets/font/fa/samim/Samim-Bold-FD.woff") format("woff"),
+      url("/assets/font/fa/samim/Samim-Bold-FD.ttf") format("truetype");
+}
+
+
 html,body{
     direction: rtl;
+    margin: 0;
+    height: 100%;
 }
 
 // app-root {
 //     display: block;
 //     height: 100%;
 // }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+body,h1,h2,h3,h4,h5,h6,p,span,div,table,tr,td,th,li,ol,ul,legend,a,input,button
+{
+  font-family: "Samim", "Helvetica Neue", sans-serif !important;
+  font-weight: 500;
+}
 .row-spacer {
     flex: 1 1 auto;
   }
@@ -30,4 +60,24 @@ padding: 20px;
   }
   table td,table th{
     text-align: center;
+  }
+
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 0;
+}
+
+.page-content-card{
+  padding: 15px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+.avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   }

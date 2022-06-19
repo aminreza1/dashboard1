@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HighchartsChartModule } from 'highcharts-angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -54,7 +55,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
+    HighchartsChartModule,
+    
     FlexLayoutModule,
     MatGridListModule,
     MatToolbarModule,

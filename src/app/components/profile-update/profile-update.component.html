@@ -1,35 +1,49 @@
 <div class="p-20">
-    <h2>ویرایش پروفایل</h2>
-    <p>صفحه اصلی > پروفایل کاربر > ویرایش پروفایل</p>
+    <h2 class="color-white">ویرایش پروفایل</h2>
+    <p class="color-white">صفحه اصلی > پروفایل کاربر > ویرایش پروفایل</p>
 
-    <div class="profile-info-card">
-        <form>
-        <h4>تصویر پروفایل</h4>
-        <img class="mb-4" [src]="baseUrl + user.avatar" alt="" width="50" height="50">
+    <div class="page-content-card mat-elevation-z5">
+        <form [formGroup]="updateProfileForm" (ngSubmit)="updateProfileForm.valid && onUpdateProfile()">
+        <h3 class="color-p400">تصویر پروفایل</h3>
+        <div fxLayout="row">
+          <img class="mb-4 avatar" [src]="baseUrl + user.avatar">
+          <div style="margin-top:10px">
+            <!-- <button mat-button class="custom-basic-btn-01" for="avatar" >
+              <mat-icon>border_color</mat-icon>
+              تصویر جدید
+            </button> -->
+            <button type="button" mat-button class="custom-basic-btn-01" (click)="fileInput.click()">
+              <mat-icon>border_color</mat-icon>
+              تصویر جدید
+              <input #fileInput type="file" (change)="onChangeAvatar($event)" style="display:none;" />
+            </button>
+          </div>
+          
+        </div>
         <div fxLayout="row">
             
             
-                <mat-form-field appearance="outline" class="w-100 p-10">
+                <mat-form-field fxFlex appearance="outline" class="p-10">
                     <mat-label>نام</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="نام خود را وارد کنید." formControlName="firstName" >
                   </mat-form-field>
            
            
-                <mat-form-field appearance="outline" class="w-100 p-10">
+                <mat-form-field fxFlex appearance="outline" class="p-10">
                     <mat-label>نام خانوادگی</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="نام خانوادگی را وارد کنید." formControlName="lastName">
                   </mat-form-field>
           
            
-                <mat-form-field appearance="outline" class="w-100 p-10">
+                <mat-form-field fxFlex appearance="outline" class="p-10">
                     <mat-label>کد ملی</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="کد ملی را وارد کنید.">
                   </mat-form-field>
 
         </div>
-        <div fxLayout="row" style="border-bottom: 1px solid gainsboro;">
+        <div fxLayout="row">
             
-            <mat-form-field appearance="outline" class="w-100 p-10">
+            <mat-form-field fxFlex appearance="outline" class="p-10">
                 <mat-label>تاریخ تولد</mat-label>
                 <input matInput [matDatepicker]="picker">
                 <mat-hint>روز/ماه/سال</mat-hint>
@@ -37,7 +51,7 @@
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
 
-              <mat-form-field appearance="outline" class="w-100 p-10">
+              <mat-form-field fxFlex appearance="outline" class="p-10">
                 <mat-label>جنسیت</mat-label>
                 <mat-select>
                   <mat-option value="unknown" selected>نامشخص</mat-option>
@@ -47,14 +61,21 @@
               </mat-form-field>
 
             
-          
+              <div fxFlex></div>
 
        
       
     </div>
-        <div style="margin-top: 10px;"> 
-            <button mat-raised-button color="accent" type="submit">ذخیره</button>
-            <button mat-button routerLink="/profile" >انصراف</button>
+    <hr />
+        <div fxLayout="row" class="operation-btn-row"> 
+            <button mat-raised-button class="custom-btn-01" type="submit">
+              <mat-icon>save</mat-icon>
+              ذخیره
+            </button>
+            <button mat-raised-button class="custom-btn-01" routerLink="/profile" >
+              <mat-icon>cancel</mat-icon>
+              انصراف
+            </button>
         </div>
     </form>
     </div>

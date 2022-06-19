@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LoginDto, TokenDto, UserDto } from '../interfaces/auth.interface';
+import { LoginDto, TokenDto, UserDto, VerifyDto } from '../interfaces/auth.interface';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { UserStoreModel } from '../services/user-store.model';
@@ -14,6 +14,24 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+   verify(_token:string){
+    var model: VerifyDto = {
+      token: _token,
+    };
+    return this.http
+      .post<TokenDto>(environment.apiBaseUrl + environment.apiActions.verifyToken, model)
+      .pipe(
+        catchError(this.handleError),
+        tap((respData: TokenDto) => {
+          this.handleAuthentication(
+            respData.user,
+            respData.token,
+            1440
+          );
+        })
+      );
+  }
+
   login(username: string, password: string) {
     var model: LoginDto = {
       username: username,
@@ -24,7 +42,6 @@ export class AuthService {
       .pipe(
         catchError(this.handleError),
         tap((respData: TokenDto) => {
-          console.log(respData)
           this.handleAuthentication(
             respData.user,
             respData.token,

@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
-    console.log(this.loginForm)
-
     let authObs: Observable<TokenDto>;
 
     authObs = this.authService.login(

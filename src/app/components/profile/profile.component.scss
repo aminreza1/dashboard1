@@ -1,9 +1,4 @@
-.profile-info-card{
-    padding: 15px;
-    margin: 10px;
-    background-color: #efefef;
-    border-radius: 10px;
-}
+
 table{
     margin-bottom: 20px;
 }
@@ -13,4 +8,7 @@ table td,table th {
 table td:first-child,
 table th:first-child {
     border-right: 0px;
+    text-align: right;
+    padding-right: 15px;
+    width: 200px;
 }
